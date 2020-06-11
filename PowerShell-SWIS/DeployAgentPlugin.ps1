@@ -14,8 +14,8 @@ Import-Module SwisPowerShell
 
 # connect to SWIS - use your connection details and credentials
 $hostname = "localhost"
-$username = "Weston"
-$password = " "
+$username = "Username"
+$password = "Password"
 $swis = Connect-Swis -Username $username -Password $password
 
 $AgentId = @(3)
