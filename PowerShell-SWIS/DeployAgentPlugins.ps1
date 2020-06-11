@@ -16,16 +16,16 @@ $username = "Weston"
 $password = " "
 $swis = Connect-Swis -Username $username -Password $password
 
-$Agents = @(1,2)
-$PluginIds = @("JobEngine","Core")
+$AgentIDs = @(1,2)
+$PluginIDs = @("JobEngine","Core")
 
-foreach ($agent in $Agents) {
-    foreach ($PluginId in $PluginIds) {
+foreach ($agentId in $AgentIDs) {
+    foreach ($PluginId in $PluginIDs) {
         Invoke-SwisVerb $swis Orion.AgentManagement.Agent DeployPlugin @(
-            $AgentId
-            $Agent
-        )
-        Write-Host $PluginId "plugin installed on AgentId"$Agent
+            $agentId,`
+            $PluginId
+            )
+        Write-Host $PluginId "plugin installed on AgentId"$agentId
     }
 }
 
